@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%div
+  %h3 Name:
+  = @good.name
+%div
+  %h3 Notes:
+  = @good.notes
+%div
+  %h3 Price:
+  = @good.price
+
+= link_to 'Edit', edit_good_path(@good)
+\|
+= link_to 'Back', goods_path
