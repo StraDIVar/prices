@@ -2,12 +2,8 @@ class PlacesController < ApplicationController
   # GET /places
   # GET /places.json
   def index
-    @places = Place.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @places }
-    end
+    @places = Place.where('name like ?', "%#{params[:term]}%").order(:name)
+    render json: @places.map(&:name)
   end
 
   # GET /places/1
