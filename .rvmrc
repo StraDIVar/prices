@@ -1,0 +1,4 @@
+rvm use 1.9.3@prices --install --create
+# add Rails.root/bin on the top of $PATH
+[ -d './bin' ] && export PATH=`pwd`/bin:$PATH
+
