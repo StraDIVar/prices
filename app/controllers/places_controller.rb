@@ -3,7 +3,11 @@ class PlacesController < ApplicationController
   # GET /places.json
   def index
     @places = Place.where('name like ?', "%#{params[:term]}%").order(:name)
-    render json: @places.map(&:name)
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @places.map(&:name) }
+    end
   end
 
   # GET /places/1
@@ -12,7 +16,7 @@ class PlacesController < ApplicationController
     @place = Place.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html
       format.json { render json: @place }
     end
   end
@@ -23,7 +27,7 @@ class PlacesController < ApplicationController
     @place = Place.new
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html
       format.json { render json: @place }
     end
   end
