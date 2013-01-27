@@ -1,22 +1,28 @@
-= form_for @good do |f|
-  - if @good.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@good.errors.count, "error")} prohibited this good from being saved:"
-      %ul
-        - @good.errors.full_messages.each do |msg|
-          %li= msg
+- input_size_class = "input-xlarge"
 
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :notes
-    = f.text_area :notes
-  .field
-    = f.label :place_name
-    = f.text_field :place_name, data: {autocomplete_source: places_path}
-  .field
-    = f.label :price
-    = f.number_field :price, min: 1, max: 1_000_000_000
-  .actions
-    = f.submit 'Save'
+.form_wrapper.form_good.well
+  = form_for @good do |f|
+    .control-group.input-prepend
+      %i.add-on.icon-gift
+      = f.text_field :name, placeholder: "Введите название товара...", class: input_size_class
+
+    .control-group.input-prepend
+      %i.add-on.icon-globe
+      = f.text_field :place_name, placeholder: "Введите место, где продается товар...", class: input_size_class,
+                     data: {autocomplete_source: places_path}
+
+    .control-group.input-prepend.input-append
+      %i.add-on.icon-circle-arrow-right
+      = f.number_field :price, placeholder: "Введите цену в рублях...", class: "input-medium",
+                       min: 1, max: 1_000_000_000
+      %i.add-on= "руб."
+
+    .control-group.input-prepend
+      %i.add-on.icon-book
+      = f.text_area :notes, placeholder: "Здесь можно ввести дополнительную информацию о товаре",
+                    rows: 3, cols: nil, class: input_size_class
+
+
+    .actions.clearfix
+      = f.submit "Сохранить", class: "btn btn-inverse btn-large pull-right"
+      = f.button "Отмена", class: "btn btn-link btn-large pull-right", type: "reset"

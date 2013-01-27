@@ -1,15 +1,18 @@
-%p#notice= notice
+.well
+  .control-group.input-prepend
+    %i.add-on.icon-gift
+    %span.input-xlarge.uneditable-input= @good.name
 
-%div
-  %h3 Name:
-  = @good.name
-%div
-  %h3 Notes:
-  = @good.notes
-%div
-  %h3 Price:
-  = @good.price
+  .control-group.input-prepend
+    %i.add-on.icon-globe
+    %span.input-xlarge.uneditable-input= @good.place.name
 
-= link_to 'Edit', edit_good_path(@good)
-\|
-= link_to 'Back', goods_path
+  .control-group.input-prepend.input-append
+    %i.add-on.icon-circle-arrow-right
+    %span.input-medium.uneditable-input= @good.price
+    %i.add-on= "руб."
+
+  .control-group.input-prepend
+    %i.add-on.icon-book
+    %div.input-xlarge.uneditable-input.uneditable-textarea
+      = @good.notes
