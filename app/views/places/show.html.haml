@@ -1,12 +1,9 @@
-%p#notice= notice
+.well
+  .control-group.input-prepend
+    %i.add-on.icon-globe
+    %span.name.input-xlarge.uneditable-input= @place.name
 
-%p
-  %b Name:
-  = @place.name
-%p
-  %b Notes:
-  = @place.notes
-
-= link_to 'Edit', edit_place_path(@place)
-\|
-= link_to 'Back', places_path
+  .control-group.input-prepend
+    %i.add-on.icon-book
+    %div.notes.input-xlarge.uneditable-input.uneditable-textarea
+      = @place.notes
