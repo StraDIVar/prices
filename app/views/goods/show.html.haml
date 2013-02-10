@@ -1,18 +1,18 @@
 .well
   .control-group.input-prepend
     %i.add-on.icon-gift
-    %span.input-xlarge.uneditable-input= @good.name
+    %span.good_name.input-xlarge.uneditable-input= @good.name
 
   .control-group.input-prepend
     %i.add-on.icon-globe
-    %span.input-xlarge.uneditable-input= @good.place.name
+    %span.place_name.input-xlarge.uneditable-input= @good.place.name
 
   .control-group.input-prepend.input-append
     %i.add-on.icon-circle-arrow-right
-    %span.input-medium.uneditable-input= @good.price
+    %span.price.input-medium.uneditable-input= @good.price
     %i.add-on= "руб."
 
   .control-group.input-prepend
     %i.add-on.icon-book
-    %div.input-xlarge.uneditable-input.uneditable-textarea
+    %div.notes.input-xlarge.uneditable-input.uneditable-textarea
       = @good.notes
