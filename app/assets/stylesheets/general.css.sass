@@ -39,7 +39,10 @@ div
   margin-top: 30px
   max-width: 350px
 
-div.notes
-  height: $notes_height !important
+.input-prepend
+  .notes
+    @include border-bottom-left-radius(4px)
 
-// TODO: bottom-left border radius
+  div.notes
+    height: $notes_height
+    overflow-y: auto

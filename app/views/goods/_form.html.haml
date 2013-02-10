@@ -13,15 +13,14 @@
 
     .control-group.input-prepend.input-append
       %i.add-on.icon-circle-arrow-right
-      = f.number_field :price, placeholder: "Введите цену в рублях...", class: "input-medium",
+      = f.number_field :price, placeholder: "Введите цену в рублях...", class: "input-small",
                        min: 1, max: 1_000_000_000
       %i.add-on= "руб."
 
     .control-group.input-prepend
       %i.add-on.icon-book
       = f.text_area :notes, placeholder: "Здесь можно ввести дополнительную информацию о товаре",
-                    rows: 3, cols: nil, class: input_size_class
-
+                    rows: 3, cols: nil, class: ['notes', input_size_class]
 
     .actions.clearfix
       = f.submit "Сохранить", class: "btn btn-inverse btn-large pull-right"

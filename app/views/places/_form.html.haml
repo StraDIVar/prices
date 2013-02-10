@@ -9,7 +9,7 @@
     .control-group.input-prepend
       %i.add-on.icon-book
       = f.text_area :notes, placeholder: "Здесь можно ввести дополнительную информацию о месте покупки...",
-                    rows: 3, cols: nil, class: input_size_class
+                    rows: 3, cols: nil, class: ['notes', input_size_class]
 
     .actions.clearfix
       = f.submit "Сохранить", class: "btn btn-inverse btn-large pull-right"
