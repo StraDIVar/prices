@@ -1,16 +1,28 @@
-%h2
-  Товары
+.nav_wrapper
+  .nav_inner
+    .page_icon
+      %i.icon-gift
+      Товары
+    %ul.navigation.navbar
+      %li.divider-vertical
+      %li
+        %a.btn.btn-primary{href: new_good_path}
+          %i.icon-plus
+          Новый
+      %li.divider-vertical
+      %li
+        %a.btn.btn-success{href: places_path}
+          %i.icon-globe
+          Места
 
-.actions
-  = link_to 'Новый товар', new_good_path, class: "btn btn-primary"
+.content
+  %table.table
+    - @goods.each do |good|
+      %tr
+        %td
+          .well
+            = render good
 
-%table.table
-  - @goods.each do |good|
-    %tr
-      %td
-        .well
-          = render good
-
-        .actions
-          = link_to 'Просмотр', good, class: "btn"
-          = link_to 'Редактировать', edit_good_path(good), class: "btn btn-success"
+          .actions
+            = link_to 'Просмотр', good, class: "btn"
+            = link_to 'Редактировать', edit_good_path(good), class: "btn btn-success"

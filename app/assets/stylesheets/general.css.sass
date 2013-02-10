@@ -1,19 +1,73 @@
 @import "compass/css3/border-radius"
+@import "compass/css3/text-shadow"
+@import "compass/css3/box-shadow"
+@import "compass/css3/images"
+@import "compass/utilities/general/clearfix"
 
+$content_width: 360px
+$nav_height: 30px
 $notes_height: 77px
 
-.content_main
-  margin-top: 30px
-  max-width: 350px
+.nav_inner, .content
+  width:  $content_width
+  margin: 0 auto
+
+.content
+  margin-top: $nav_height + 20px
 
 .input-prepend
   .notes
-    @include border-bottom-left-radius(4px)
+    +border-bottom-left-radius(4px)
 
   div.notes
     height: $notes_height
     overflow-y: auto
 
-div.actions
+.actions
   margin-top: 15px
   margin-bottom: 15px
+
+// Navigation
+
+.nav_wrapper
+  position: fixed
+  width: 100%
+  top: 0
+  z-index: 1
+
+.nav_inner
+  line-height: $nav_height
+  padding: 5px
+  +background-image(linear-gradient(top, #ffffff, #f2f2f2))
+  +box-shadow(0 1px 4px rgba(0, 0, 0, 0.065))
+  +border-bottom-radius(5px)
+  border: 1px solid #d4d4d4
+  border-top: 0
+  +legacy-pie-clearfix
+
+  .navigation, .page_icon
+    float: left
+    margin: 0 5px
+
+.page_icon
+  font-size: 18px
+  font-weight: bold
+  color: #666666
+  +single-text-shadow(#aaa, 0, 1px, 2px)
+
+
+.navigation
+  +legacy-pie-clearfix
+
+  li
+    list-style: none
+    float: left
+    margin-right: 10px
+
+    &:last
+      margin-right: 0
+
+  .divider-vertical // bootstraps
+    height: $nav_height
+    margin-left: 0
+
