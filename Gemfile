@@ -16,6 +16,7 @@ group :assets do
   gem 'haml', '~> 3.1.2'
   gem 'haml-rails'
   gem 'compass'
+  gem 'compass_twitter_bootstrap'
   gem 'compass-rails'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
@@ -25,8 +26,6 @@ group :assets do
 
   gem "libv8", '3.11.8.13'
   gem "therubyracer", '0.11.2'
-  gem "less-rails"
-  gem "twitter-bootstrap-rails"
 end
 
 gem 'jquery-rails'
