@@ -1,23 +1,16 @@
-%h1 Listing goods
+%h2
+  Товары
 
-%table
-  %tr
-    %th Name
-    %th Notes
-    %th Price
-    %th
-    %th
-    %th
+.actions
+  = link_to 'New Good', new_good_path, class: "btn btn-primary"
 
+%table.table.table-hover
   - @goods.each do |good|
     %tr
-      %td= good.name
-      %td= good.notes
-      %td= good.price
-      %td= link_to 'Show', good
-      %td= link_to 'Edit', edit_good_path(good)
-      %td= link_to 'Destroy', good, method: :delete, data: { confirm: 'Are you sure?' }
+      %td
+        .well
+          = render good
 
-%br
-
-= link_to 'New Good', new_good_path
+        .actions
+          = link_to 'Просмотр', good, class: "btn"
+          = link_to 'Редактировать', edit_good_path(good), class: "btn btn-success"

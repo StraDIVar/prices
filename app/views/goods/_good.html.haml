@@ -1,0 +1,24 @@
+-# Inspected locals:
+-# good as Object
+
+.control-group.input-prepend
+  %i.add-on.icon-gift
+  %span.good_name.input-xlarge.uneditable-input
+    = good.name
+
+.control-group.input-prepend
+  %i.add-on.icon-globe
+  %span.place_name.input-xlarge.uneditable-input
+    - if good.place
+      = good.place.name
+
+.control-group.input-prepend.input-append
+  %i.add-on.icon-circle-arrow-right
+  %span.price.input-small.uneditable-input
+    = good.price
+  %i.add-on= "руб."
+
+.control-group.input-prepend
+  %i.add-on.icon-book
+  %div.notes.input-xlarge.uneditable-input.uneditable-textarea
+    = good.notes
