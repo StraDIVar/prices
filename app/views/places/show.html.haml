@@ -1,9 +1,6 @@
 .well
-  .control-group.input-prepend
-    %i.add-on.icon-globe
-    %span.place_name.input-xlarge.uneditable-input= @place.name
+  = render @place
 
-  .control-group.input-prepend
-    %i.add-on.icon-book
-    %div.notes.input-xlarge.uneditable-input.uneditable-textarea
-      = @place.notes
+  .actions
+    = link_to 'Редактировать', edit_place_path(@place), class: "btn btn-success"
+

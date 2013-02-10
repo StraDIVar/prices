@@ -1,21 +1,17 @@
-%h1 Listing places
+%h2
+  Места
 
-%table
-  %tr
-    %th Name
-    %th Notes
-    %th
-    %th
-    %th
+.actions
+  = link_to 'Новое место', new_place_path, class: "btn btn-primary"
 
+%table.table
   - @places.each do |place|
     %tr
-      %td= place.name
-      %td= place.notes
-      %td= link_to 'Show', place
-      %td= link_to 'Edit', edit_place_path(place)
-      %td= link_to 'Destroy', place, method: :delete, data: { confirm: 'Are you sure?' }
+      %td
+        .well
+          = render place
 
-%br
+        .actions
+          = link_to 'Просмотр', place, class: "btn"
+          = link_to 'Редактировать', edit_place_path(place), class: "btn btn-success"
 
-= link_to 'New Place', new_place_path
