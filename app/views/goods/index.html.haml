@@ -2,9 +2,9 @@
   Товары
 
 .actions
-  = link_to 'New Good', new_good_path, class: "btn btn-primary"
+  = link_to 'Новый товар', new_good_path, class: "btn btn-primary"
 
-%table.table.table-hover
+%table.table
   - @goods.each do |good|
     %tr
       %td
