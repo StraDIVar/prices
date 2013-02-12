@@ -86,7 +86,7 @@ $notesHeight: 77px
 
 // Lists
 
-.goods_list, places_list
+.goods_list, .places_list
   list-style: none
 
 .goods_list_item, .places_list_item
@@ -124,9 +124,10 @@ $borderRadius: 4px
   background-color: #FCFCFC
   width: $dataWidth
 
-.good_name
+.good_name, .places_list_item .place_name
   font-size: 14px
   font-weight: bold
+  +single-text-shadow(rgba(0, 0, 0, 0.3), -1px, 1px, 2px)
 
 .price
   font-size: 20px

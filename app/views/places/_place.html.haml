@@ -1,11 +1,14 @@
 -# Expected locals:
 -# place as Object
 
-.control-group.input-prepend
-  %i.add-on.icon-globe
-  %span.place_name.input-xlarge.uneditable-input= place.name
+.data_container
+  .data_header
+    Место:
+  .data.place_name
+    = place.name
 
-.control-group.input-prepend
-  %i.add-on.icon-book
-  %div.notes.input-xlarge.uneditable-input.uneditable-textarea
+.data_container
+  .data_header
+    Дополнительно:
+  .data.notes
     = place.notes
