@@ -3,27 +3,28 @@
 @import "compass/css3/box-shadow"
 @import "compass/css3/images"
 @import "compass/utilities/general/clearfix"
+@import "mixins"
 
-$content_width: 360px
-$nav_height: 30px
-$notes_height: 77px
+$contentWidth: 450px
+$navHeight: 30px
+$notesHeight: 77px
 
 .nav_inner, .content
-  width:  $content_width
+  width: $contentWidth
   margin: 0 auto
 
 .content
-  margin-top: $nav_height + 20px
+  margin-top: $navHeight + 20px
 
 .input-prepend
   .notes
     +border-bottom-left-radius(4px)
 
   div.notes
-    height: $notes_height
+    height: $notesHeight
     overflow-y: auto
 
-.actions
+.actions // unused
   margin-top: 15px
   margin-bottom: 15px
 
@@ -36,10 +37,10 @@ $notes_height: 77px
   z-index: 1
 
 .nav_inner
-  line-height: $nav_height
+  line-height: $navHeight
   padding: 5px
-  +background-image(linear-gradient(top, #ffffff, #f2f2f2))
-  +box-shadow(0 1px 4px rgba(0, 0, 0, 0.065))
+  +background-image(linear-gradient(top, #FFFFFF, #F2F2F2))
+  +box-shadow(0 1px 4px rgba(0, 0, 0, 0.1))
   +border-bottom-radius(5px)
   border: 1px solid #d4d4d4
   border-top: 0
@@ -68,6 +69,66 @@ $notes_height: 77px
       margin-right: 0
 
   .divider-vertical // bootstraps
-    height: $nav_height
+    height: $navHeight
     margin-left: 0
 
+// Toolbar
+
+.item_toolbar
+  display: inline-block
+  +background-image(linear-gradient(top, #FFFFFF, #F2F2F2))
+  +box-shadow(0 -1px 4px rgba(0, 0, 0, 0.1))
+  border: 1px solid #D4D4D4
+  border-bottom: 0
+  +border-top-radius(6px)
+  margin: 0 25px
+  padding: 6px 20px
+
+// Lists
+
+.goods_list, places_list
+  list-style: none
+
+.goods_list_item, .places_list_item
+  padding: 5px
+
+// Data
+
+$dataHeaderWidth: 120px
+$dataWidth: $contentWidth - $dataHeaderWidth - 90px
+$borderRadius: 4px
+
+.data_container
+  +as_table_line($borderRadius)
+
+  *
+    font-size: 13px
+
+  & > div
+    border: 1px solid #CCCCCC
+    +box-shadow(0 1px 2px rgba(0, 0, 0, 0.1))
+    vertical-align: top
+    padding: 4px 6px
+    min-height: 20px
+
+.data_header
+  background-color: #F5F5F5
+  width: $dataHeaderWidth
+  text-align: right
+  font-weight: bold
+  font-style: italic
+  color: #333333
+  +single-text-shadow(rgba(0, 0, 0, 0.4), 1px, 1px, 2px)
+
+.data
+  background-color: #FCFCFC
+  width: $dataWidth
+
+.good_name
+  font-size: 14px
+  font-weight: bold
+
+.price
+  font-size: 20px
+  font-weight: bold
+  +single-text-shadow(rgba(0, 0, 0, 0.3), -1px, 1px, 3px)

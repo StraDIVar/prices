@@ -16,13 +16,12 @@
           Места
 
 .content
-  %table.table
+  %ul.goods_list
     - @goods.each do |good|
-      %tr
-        %td
-          .well
-            = render good
+      %li.goods_list_item
+        .item_toolbar
+          = link_to 'Просмотр', good, class: "btn"
+          = link_to 'Редактировать', edit_good_path(good), class: "btn btn-success"
+        %div
+          = render good
 
-          .actions
-            = link_to 'Просмотр', good, class: "btn"
-            = link_to 'Редактировать', edit_good_path(good), class: "btn btn-success"
