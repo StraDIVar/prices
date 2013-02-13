@@ -1,0 +1,63 @@
+@import "compass/css3/border-radius"
+@import "compass/css3/text-shadow"
+@import "compass/css3/box-shadow"
+@import "compass/css3/images"
+@import "compass/utilities/general/clearfix"
+@import "compass/css3/transition"
+@import "compass/css3/opacity"
+@import "mixins"
+
+.button
+  display: inline-block
+  padding: 4px 12px
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif
+  font-size: 14px
+  line-height: 20px
+  color: #333333
+  text-align: center
+  text-decoration: none
+  +text-shadow(rgba(255, 255, 255, 0.75) 0 1px 1px)
+  vertical-align: middle
+  cursor: pointer
+  +background-image(linear-gradient(top, #FFFFFF, #E6E6E6))
+  background-repeat: repeat-x
+  border: 1px solid #cccccc
+  border-color: #E6E6E6 #E6E6E6 #B3B3B3
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25)
+  +border-radius(3px)
+  +box-shadow(0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05))
+
+.button:hover,
+.button:focus,
+.button:active,
+.button.active,
+.button.disabled,
+.button[disabled]
+  color: #333333
+  background-color: #E6E6E6
+
+.button:active,
+.button.active
+  background-color: #CCCCCC
+
+.button:hover,
+.button:focus
+  color: #333333
+  background-position: 0 -15px
+  +transition(background-position 0.1s linear)
+
+.button:focus
+  outline: none
+
+.button.active,
+.button:active
+  background-image: none
+  outline: 0
+  +box-shadow(0 2px 4px rgba(0, 0, 0, 0.15) inset, 0 1px 2px rgba(0, 0, 0, 0.05))
+
+.button.disabled,
+.button[disabled]
+  cursor: default
+  background-image: none
+  +opacity(0.65)
+

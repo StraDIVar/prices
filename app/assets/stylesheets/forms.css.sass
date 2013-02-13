@@ -1,7 +1,9 @@
+@import "compass/utilities/general/clearfix"
 @import "compass/css3/border-radius"
 @import "compass/css3/text-shadow"
 @import "compass/css3/box-shadow"
 @import "compass/css3/images"
+@import "compass/css3/transition"
 @import "mixins"
 
 $contentWidth: 450px
@@ -10,7 +12,11 @@ $labelWidth: 120px
 $controlWidth: $contentWidth - $labelWidth - 70px
 
 .actions
-  margin-top: 25px
+  margin-top: 15px
+  +legacy-pie-clearfix
+
+  & > *
+    float: right
 
 textarea,
 input[type="text"],
@@ -24,7 +30,7 @@ input[type="time"]
   margin: 0
   border: 1px solid #CCCCCC
   +box-shadow(0 1px 1px rgba(0, 0, 0, 0.075) inset)
-  transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s
+  +transition(border 0.2s linear 0s, box-shadow 0.2s linear 0s)
   font-family: Arial, sans-serif
   font-size: 15px
 
@@ -62,7 +68,7 @@ textarea
     width: $labelWidth
     text-align: right
     color: #666666
-    +single-text-shadow(rgba(0, 0, 0, 0.4), 1px, 1px, 2px)
+    +text-shadow(rgba(0, 0, 0, 0.4) 1px 1px 2px)
 
   & > input, & > textarea
     background-color: #FFFFFF
@@ -70,4 +76,4 @@ textarea
     width: $controlWidth
     margin-left: -1px
     &:focus
-      +single-text-shadow(rgba(0, 0, 0, 0.25), -1px, 1px, 2px)
+      +text-shadow(rgba(0, 0, 0, 0.25) -1px 1px 2px)
