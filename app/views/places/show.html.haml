@@ -1,5 +1,6 @@
-.well
-  = render @place
+.content
+  %div
+    = render @place
 
   .actions
     = link_to 'Редактировать', edit_place_path(@place), class: "button"

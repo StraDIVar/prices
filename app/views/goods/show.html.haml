@@ -1,5 +1,6 @@
-.well
-  = render @good
+.content
+  %div
+    = render @good
 
   .actions
     = link_to 'Редактировать', edit_good_path(@good), class: "button"
