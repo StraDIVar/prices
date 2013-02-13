@@ -9,6 +9,9 @@ $contentWidth: 450px
 $navHeight: 30px
 $notesHeight: 77px
 
+body
+  font-family: Helvetica, Arial, sans-serif
+
 .nav_inner, .content
   width: $contentWidth
   margin: 0 auto
@@ -95,7 +98,7 @@ $notesHeight: 77px
 // Data
 
 $dataHeaderWidth: 120px
-$dataWidth: $contentWidth - $dataHeaderWidth - 90px
+$dataWidth: $contentWidth - $dataHeaderWidth - 80px
 $borderRadius: 4px
 
 .data_container
@@ -116,7 +119,6 @@ $borderRadius: 4px
   width: $dataHeaderWidth
   text-align: right
   font-weight: bold
-  font-style: italic
   color: #333333
   +single-text-shadow(rgba(0, 0, 0, 0.4), 1px, 1px, 2px)
 
@@ -130,6 +132,11 @@ $borderRadius: 4px
   +single-text-shadow(rgba(0, 0, 0, 0.3), -1px, 1px, 2px)
 
 .price
-  font-size: 20px
-  font-weight: bold
-  +single-text-shadow(rgba(0, 0, 0, 0.3), -1px, 1px, 3px)
+  .data_container &
+    min-height: 25px
+    line-height: 25px
+
+  &.data
+    font-size: 20px
+    font-weight: bold
+    +single-text-shadow(rgba(0, 0, 0, 0.3), -1px, 1px, 3px)

@@ -1,5 +1,73 @@
+@import "compass/css3/border-radius"
+@import "compass/css3/text-shadow"
+@import "compass/css3/box-shadow"
+@import "compass/css3/images"
+@import "mixins"
+
+$contentWidth: 450px
+$borderRadius: 4px
+$labelWidth: 120px
+$controlWidth: $contentWidth - $labelWidth - 70px
+
 .actions
   margin-top: 25px
 
+textarea,
+input[type="text"],
+input[type="number"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"]
+  margin: 0
+  border: 1px solid #CCCCCC
+  +box-shadow(0 1px 1px rgba(0, 0, 0, 0.075) inset)
+  transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s
+  font-family: Arial, sans-serif
+  font-size: 15px
+
+  &:focus
+    border-color: rgba(82, 168, 236, 0.8)
+    +box-shadow(0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(82, 168, 236, 0.6))
+    outline: 0 none
+
 textarea
   resize: vertical
+
+.form_wrapper
+  background-color: #F5F5F5
+  border: 1px solid #E3E3E3
+  +border-radius(4px)
+  +box-shadow(0 1px 1px rgba(0, 0, 0, 0.05) inset)
+  padding: 20px
+
+.control_container
+  margin-bottom: 5px
+  font-size: 0
+
+  & > *
+    display: inline-block
+    border: 1px solid #CCCCCC
+    +box-shadow(0 1px 2px rgba(0, 0, 0, 0.1))
+    vertical-align: top
+    padding: 4px 6px
+    min-height: 20px
+    font-size: 14px
+
+  & > label
+    background-color: #F5F5F5
+    +border-left-radius($borderRadius)
+    width: $labelWidth
+    text-align: right
+    color: #666666
+    +single-text-shadow(rgba(0, 0, 0, 0.4), 1px, 1px, 2px)
+
+  & > input, & > textarea
+    background-color: #FFFFFF
+    +border-right-radius($borderRadius)
+    width: $controlWidth
+    margin-left: -1px
+    &:focus
+      +single-text-shadow(rgba(0, 0, 0, 0.25), -1px, 1px, 2px)

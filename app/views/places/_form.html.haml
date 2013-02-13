@@ -1,15 +1,13 @@
-- input_size_class = "input-xlarge"
-
-.form_wrapper.form_place.well
+.form_wrapper.form_place
   = form_for @place do |f|
-    .control-group.input-prepend
-      %i.add-on.icon-globe
-      = f.text_field :name, placeholder: "Введите название места покупки...", class: input_size_class
+    .control_container
+      = f.label :name, "Место:"
+      = f.text_field :name, placeholder: "Введите название места покупки..."
 
-    .control-group.input-prepend
-      %i.add-on.icon-book
+    .control_container
+      = f.label :notes, "Дополнительно:"
       = f.text_area :notes, placeholder: "Здесь можно ввести дополнительную информацию о месте покупки...",
-                    rows: 3, cols: nil, class: ['notes', input_size_class]
+                    rows: 3, cols: nil
 
     .actions.clearfix
       = f.submit "Сохранить", class: "btn btn-inverse btn-large pull-right"

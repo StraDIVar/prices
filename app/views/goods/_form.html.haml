@@ -1,26 +1,23 @@
-- input_size_class = "input-xlarge"
-
-.form_wrapper.form_good.well
+.form_wrapper.form_good
   = form_for @good do |f|
-    .control-group.input-prepend
-      %i.add-on.icon-gift
-      = f.text_field :name, placeholder: "Введите название товара...", class: input_size_class
+    .control_container
+      = f.label :name, "Товар:"
+      = f.text_field :name, placeholder: "Введите название товара..."
 
-    .control-group.input-prepend
-      %i.add-on.icon-globe
-      = f.text_field :place_name, placeholder: "Введите место, где продается товар...", class: input_size_class,
+    .control_container
+      = f.label :place_name, "Место:"
+      = f.text_field :place_name, placeholder: "Введите место, где продается товар...",
                      data: {autocomplete_source: places_path}
 
-    .control-group.input-prepend.input-append
-      %i.add-on.icon-circle-arrow-right
-      = f.number_field :price, placeholder: "Введите цену в рублях...", class: "input-small",
+    .control_container
+      = f.label :price, "Цена:"
+      = f.number_field :price, placeholder: "Введите цену в рублях...",
                        min: 1, max: 1_000_000_000
-      %i.add-on= "руб."
 
-    .control-group.input-prepend
-      %i.add-on.icon-book
+    .control_container
+      = f.label :notes, "Дополнительно:"
       = f.text_area :notes, placeholder: "Здесь можно ввести дополнительную информацию о товаре",
-                    rows: 3, cols: nil, class: ['notes', input_size_class]
+                    rows: 3, cols: nil
 
     .actions.clearfix
       = f.submit "Сохранить", class: "btn btn-inverse btn-large pull-right"
