@@ -6,7 +6,7 @@
     %ul.navigation.navbar
       %li.divider-vertical
       %li
-        %a.button{href: new_good_path}
+        %a.button.button_success{href: new_good_path}
           %i.icon-plus
           Добавить
       %li.divider-vertical
@@ -20,8 +20,8 @@
     - @goods.each do |good|
       %li.goods_list_item
         .item_toolbar
-          = link_to 'Просмотр', good, class: "button"
-          = link_to 'Редактировать', edit_good_path(good), class: "button"
+          = link_to 'Просмотр', good, class: "button button_small"
+          = link_to 'Редактировать', edit_good_path(good), class: "button button_success button_small"
         %div
           = render good
 

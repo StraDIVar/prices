@@ -6,7 +6,7 @@
     %ul.navigation.navbar
       %li.divider-vertical
       %li
-        %a.button{href: new_place_path}
+        %a.button.button_success{href: new_place_path}
           %i.icon-plus
           Добавить
       %li.divider-vertical
@@ -20,7 +20,7 @@
     - @places.each do |place|
       %li.places_list_item
         .item_toolbar
-          = link_to 'Просмотр', place, class: "button"
-          = link_to 'Редактировать', edit_place_path(place), class: "button"
+          = link_to 'Просмотр', place, class: "button button_small"
+          = link_to 'Редактировать', edit_place_path(place), class: "button button_success button_small"
         %div
           = render place
