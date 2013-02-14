@@ -45,8 +45,6 @@ GEM
       sass (~> 3.1)
     compass-rails (1.0.3)
       compass (>= 0.12.2, < 0.14)
-    compass_twitter_bootstrap (2.2.2.2)
-      compass
     daemons (1.1.9)
     erubis (2.7.0)
     eventmachine (1.0.0)
@@ -140,7 +138,6 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   compass
   compass-rails
-  compass_twitter_bootstrap
   haml (~> 3.1.2)
   haml-rails
   jquery-rails

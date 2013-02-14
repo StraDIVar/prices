@@ -16,7 +16,6 @@ group :assets do
   gem 'haml', '~> 3.1.2'
   gem 'haml-rails'
   gem 'compass'
-  gem 'compass_twitter_bootstrap'
   gem 'compass-rails'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
