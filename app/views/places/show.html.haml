@@ -1,7 +1,7 @@
 .content
-  %div
-    = render @place
+  .item
+    %div
+      = render @place
 
-  .actions
-    = link_to 'Редактировать', edit_place_path(@place), class: "button button_success"
-
+    .actions
+      = link_to 'Редактировать', edit_place_path(@place), class: "button button_success"
