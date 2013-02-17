@@ -14,14 +14,13 @@
         %a.button{href: places_path}
           %i.icon-globe
           Места
+      %li.divider_vertical
+      %li
+        = form_tag search_goods_path, method: :get, remote: true do
+          = text_field_tag :search, params[:search], class: "search_field"
+          = submit_tag "Искать", name: nil, class: "button"
 
 .content
   %ul.goods_list
-    - @goods.each do |good|
-      %li.goods_list_item
-        .item_toolbar
-          = link_to 'Просмотр', good, class: "button button_small"
-          = link_to 'Редактировать', edit_good_path(good), class: "button button_success button_small"
-        %div
-          = render good
+    = render partial: 'goods', locals: {goods: @goods}
 

@@ -3,7 +3,9 @@ Prices::Application.routes.draw do
     get 'search', on: :collection
   end
 
-  resources :goods
+  resources :goods do
+    get 'search', on: :collection
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

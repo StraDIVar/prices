@@ -18,7 +18,7 @@
       %li
         = form_tag search_places_path, method: :get, remote: true do
           = text_field_tag :search, params[:search], class: "search_field"
-          = submit_tag "Искать", name: nil, class: "button button_small"
+          = submit_tag "Искать", name: nil, class: "button"
 
 .content
   %ul.places_list

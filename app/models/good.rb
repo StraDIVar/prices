@@ -5,6 +5,12 @@ class Good < ActiveRecord::Base
 
   belongs_to :place
 
+  searchable do
+    text :name, boost: 5
+    text :notes
+    integer :price
+  end
+
   def place_name
     place.name if place
   end

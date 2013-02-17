@@ -80,4 +80,15 @@ class GoodsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def search
+    @search = Good.search do
+      fulltext params[:search]
+    end
+    @goods = @search.results
+
+    respond_to do |format|
+      format.js
+    end
+  end
 end
