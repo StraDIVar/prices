@@ -1,3 +1,4 @@
+@import "compass/reset"
 @import "compass/css3/border-radius"
 @import "compass/css3/text-shadow"
 @import "compass/css3/box-shadow"
@@ -11,14 +12,17 @@ $contentWidth: 450px
 $navHeight: 30px
 $notesHeight: 77px
 
++global-reset
+
 body
   font-family: Helvetica, Arial, sans-serif
 
-.nav_inner, .content
-  width: $contentWidth
+.content,
+.nav_inner
   margin: 0 auto
 
 .content
+  width: $contentWidth
   margin-top: $navHeight + 20px
 
 .input-prepend
@@ -38,8 +42,9 @@ body
   z-index: 1
 
 .nav_inner
-  line-height: $navHeight
+  width: $contentWidth + 200px
   padding: 5px
+  line-height: $navHeight
   +background-image(linear-gradient(top, #FFFFFF, #F2F2F2))
   +box-shadow(0 1px 4px rgba(0, 0, 0, 0.1))
   +border-bottom-radius(5px)
@@ -68,10 +73,21 @@ body
 
     &:last
       margin-right: 0
+      float: right
 
-  .divider-vertical // bootstraps
+  .divider_vertical
     height: $navHeight
-    margin-left: 0
+    margin: 0 10px 0 0
+    border-right: 1px solid #ffffff
+    border-left: 1px solid #f2f2f2
+
+  input
+    vertical-align: middle
+
+    &.search_field
+      +border-radius(4px)
+      padding-left: 5px
+      padding-right: 5px
 
 // Toolbar
 
@@ -89,6 +105,9 @@ body
 
 .goods_list, .places_list
   list-style: none
+
+  & > *
+    margin: 10px 0
 
 // Data
 
