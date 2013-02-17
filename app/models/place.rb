@@ -3,4 +3,9 @@ class Place < ActiveRecord::Base
   validates :name, presence: true
 
   has_many :goods
+
+  searchable do
+    text :name, boost: 5
+    text :notes
+  end
 end

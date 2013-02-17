@@ -4,23 +4,22 @@
       %i.icon-gift
       Места
     %ul.navigation.navbar
-      %li.divider-vertical
+      %li.divider_vertical
       %li
         %a.button.button_success{href: new_place_path}
           %i.icon-plus
           Добавить
-      %li.divider-vertical
+      %li.divider_vertical
       %li
         %a.button{href: goods_path}
           %i.icon-globe
           Товары
+      %li.divider_vertical
+      %li
+        = form_tag search_places_path, method: :get, remote: true do
+          = text_field_tag :search, params[:search], class: "search_field"
+          = submit_tag "Искать", name: nil, class: "button button_small"
 
 .content
   %ul.places_list
-    - @places.each do |place|
-      %li.places_list_item
-        .item_toolbar
-          = link_to 'Просмотр', place, class: "button button_small"
-          = link_to 'Редактировать', edit_place_path(place), class: "button button_success button_small"
-        %div
-          = render place
+    = render partial: 'places', locals: {places: @places}

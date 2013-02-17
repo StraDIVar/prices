@@ -1,5 +1,8 @@
 Prices::Application.routes.draw do
-  resources :places
+  resources :places do
+    get 'search', on: :collection
+  end
+
   resources :goods
 
   # The priority is based upon order of creation:

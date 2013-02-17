@@ -80,4 +80,15 @@ class PlacesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def search
+    @search = Place.search do
+      fulltext params[:search]
+    end
+    @places = @search.results
+
+    respond_to do |format|
+      format.js
+    end
+  end
 end
