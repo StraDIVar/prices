@@ -17,7 +17,6 @@ end
 # in production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
   gem 'haml', '~> 3.1.2'
   gem 'haml-rails'
   gem 'compass'
@@ -31,6 +30,8 @@ group :assets do
   gem "libv8", '3.11.8.13'
   gem "therubyracer", '0.11.2'
 end
+
+gem 'coffee-rails', '~> 3.2.1'
 
 gem 'jquery-rails'
 gem 'pry'
