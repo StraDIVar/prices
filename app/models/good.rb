@@ -5,10 +5,8 @@ class Good < ActiveRecord::Base
 
   belongs_to :place
 
-  searchable do
-    text :name, boost: 5
-    text :notes
-    integer :price
+  def self.searchable_language
+    'russian'
   end
 
   def place_name

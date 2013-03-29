@@ -4,8 +4,7 @@ class Place < ActiveRecord::Base
 
   has_many :goods
 
-  searchable do
-    text :name, boost: 5
-    text :notes
+  def self.searchable_language
+    'russian'
   end
 end

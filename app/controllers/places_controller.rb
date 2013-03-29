@@ -82,10 +82,7 @@ class PlacesController < ApplicationController
   end
 
   def search
-    @search = Place.search do
-      fulltext params[:search]
-    end
-    @places = @search.results
+    @places = Place.basic_search params[:search]
 
     respond_to do |format|
       format.js

@@ -35,8 +35,7 @@ gem 'jquery-rails'
 gem 'pry'
 gem 'thin'
 gem 'rack', '1.4.1'
-gem 'sunspot_rails'
-gem 'sunspot_solr'
+gem 'textacular', '~> 3.0', require: 'textacular/rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

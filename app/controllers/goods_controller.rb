@@ -82,10 +82,7 @@ class GoodsController < ApplicationController
   end
 
   def search
-    @search = Good.search do
-      fulltext params[:search]
-    end
-    @goods = @search.results
+    @goods = Good.basic_search params[:search]
 
     respond_to do |format|
       format.js
