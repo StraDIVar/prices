@@ -32,6 +32,7 @@ gem "therubyracer", '0.11.2'
 gem 'coffee-rails', '~> 3.2.1'
 
 gem 'jquery-rails'
+gem 'fancybox2-rails', '~> 0.2.4'
 gem 'pry'
 gem 'thin'
 gem 'rack', '1.4.1'
