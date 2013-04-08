@@ -35,6 +35,11 @@ class GoodsController < ApplicationController
   # GET /goods/1/edit
   def edit
     @good = Good.find(params[:id])
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   # POST /goods

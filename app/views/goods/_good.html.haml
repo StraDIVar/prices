@@ -13,5 +13,5 @@
     = good.notes
 
   .good__actions
-    = link_to 'Edit', edit_good_path(good), class: 'decor_button--small'
+    = link_to 'Edit', edit_good_path(good), class: 'good__edit_link decor_button--small', remote: true
     = link_to 'Delete', 'delete_good_path(good)', class: 'decor_button--small'
