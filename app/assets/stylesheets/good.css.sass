@@ -1,0 +1,39 @@
+@import "compass/css3/images"
+@import "mixins"
+
+$padding_vertical: 0.5em
+$padding_horizontal: 0.5em
+
+.good
+  position: relative
+  border-top: 1px solid rgba(0, 0, 0, 0.1)
+  padding: $padding_vertical $padding_horizontal
+
+  &:first-child
+    border-top: none
+
+  &:hover
+    +background-image(linear-gradient(top, #FFFFFF, #F2F2F2))
+
+.good__title
+  margin-bottom: 0.8em
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
+
+.good__name
+  font-size: 150%
+  font-weight: bold
+
+.good__place_name
+  font-size: 120%
+
+.good__price
+  font-size: 200%
+  font-weight: bold
+
+.good__actions
+  position: absolute
+  bottom: $padding_vertical
+  right: $padding_horizontal
+

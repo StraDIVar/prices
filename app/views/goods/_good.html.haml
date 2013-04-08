@@ -1,27 +1,17 @@
 -# Expected locals:
 -# good as Object
 
-.data_container
-  .data_header
-    Товар:
-  .data.good_name
-    = good.name
+%li.good
+  %h3.good__title
+    %span.good__name= good.name
+    %span.good__place_name= ", #{good.place.name}" if good.place
 
-.data_container
-  .data_header
-    Место:
-  .data.place_name
-    - if good.place
-      = good.place.name
-
-.data_container
-  .data_header.price
-    Цена:
-  .data.price
+  .good__price
     = good.price
 
-.data_container
-  .data_header
-    Дополнительно:
-  .data.notes
+  .good__notes
     = good.notes
+
+  .good__actions
+    = link_to 'Edit', edit_good_path(good), class: 'decor_button--small'
+    = link_to 'Delete', 'delete_good_path(good)', class: 'decor_button--small'

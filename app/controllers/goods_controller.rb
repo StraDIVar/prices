@@ -44,7 +44,7 @@ class GoodsController < ApplicationController
 
     respond_to do |format|
       if @good.save
-        format.html { redirect_to @good, notice: 'Good was successfully created.' }
+        format.html { redirect_to goods_path, notice: 'Good was successfully created.' }
         format.json { render json: @good, status: :created, location: @good }
       else
         format.html { render action: "new" }
@@ -60,7 +60,7 @@ class GoodsController < ApplicationController
 
     respond_to do |format|
       if @good.update_attributes(params[:good])
-        format.html { redirect_to @good, notice: 'Good was successfully updated.' }
+        format.html { redirect_to goods_path, notice: 'Good was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

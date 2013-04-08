@@ -1,0 +1,9 @@
+-# Expected locals:
+
+.header
+  .header__title_wrapper
+    = yield :header_title
+  .header__nav_wrapper
+    = yield :header_buttons
+  .header__search_form_wrapper
+    = render partial: 'application/search_form'

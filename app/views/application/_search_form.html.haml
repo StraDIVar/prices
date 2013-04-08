@@ -1,0 +1,7 @@
+-# Expected locals:
+-# search_path as String
+
+.search_form
+  = form_tag search_path, method: :get, remote: true do
+    = text_field_tag :search, params[:search], class: "search_field"
+    = submit_tag "Искать", name: nil, class: "button"

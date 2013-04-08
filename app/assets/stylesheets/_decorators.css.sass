@@ -1,0 +1,83 @@
+@import "compass/css3/border-radius"
+@import "compass/css3/text-shadow"
+@import "compass/css3/box-shadow"
+@import "compass/css3/images"
+@import "compass/utilities/general/clearfix"
+@import "compass/css3/transition"
+@import "compass/css3/opacity"
+@import "mixins"
+
+.decor_button
+  display: inline-block
+  padding: 4px 12px
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif
+  box-sizing: border-box
+  font-size: 14px
+  line-height: 20px
+  color: #333333
+  text-align: center
+  text-decoration: none
+  +text-shadow(rgba(255, 255, 255, 0.75) 0 1px 1px)
+  vertical-align: middle
+  cursor: pointer
+  background-color: #e6e6e6
+  +background-image(linear-gradient(top, #ffffff, #e6e6e6))
+  background-repeat: repeat-x
+  border: 1px solid #cccccc
+  border-color: #e6e6e6 #e6e6e6 #b3b3b3
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25)
+  +border-radius(3px)
+  +box-shadow(0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05))
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active,
+  &.disabled,
+  &[disabled]
+    color: #333333
+    background-color: #e6e6e6
+
+  &:hover,
+  &:focus
+    color: #333333
+    background-position: 0 -15px
+    +transition(background-position 0.1s linear)
+
+  &:focus
+    outline: none
+
+  &.active, &:active
+    background-color: #cccccc
+    background-image: none
+    outline: 0
+    +box-shadow(0 2px 4px rgba(0, 0, 0, 0.15) inset, 0 1px 2px rgba(0, 0, 0, 0.05))
+
+  &.disabled, &[disabled]
+    cursor: default
+    background-image: none
+    +opacity(0.65)
+
+.decor_button--large
+  @extend .decor_button
+  font-size: 18px
+  line-height: 30px
+
+.decor_button--small
+  @extend .decor_button
+  font-size: 11px
+  line-height: 12px
+
+[type="submit"],
+[type="button"],
+[type="reset"]
+
+  &.decor_button
+    height: 30px
+
+  &.decor_button--large
+    height: 42px
+
+  &.decor_button--small
+    height: 22px
+    padding-top: 2px
