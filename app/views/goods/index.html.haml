@@ -22,5 +22,4 @@
 
 .content
   %ul.goods_list
-    - @goods.each do |good|
-      = render partial: 'good', locals: {good: good}
+    = render 'goods', locals: {goods: @goods}
