@@ -7,8 +7,8 @@ development:
   adapter: postgresql
   database: prices_dev
   host: 127.0.0.1
-  username: dmitry
-  password: warecorp
+  username: prices
+  password: prices
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -17,8 +17,8 @@ test:
   adapter: postgresql
   database: prices_test
   host: 127.0.0.1
-  username: dmitry
-  password: warecorp
+  username: prices
+  password: prices
 
 production:
   adapter: postgresql
